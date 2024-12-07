@@ -14,6 +14,7 @@
     font-family: "Roboto", sans-serif;
 }
 
+/* Vídeo de fundo */
 .caixa-video {
     position: fixed;
     z-index: -1;
@@ -24,8 +25,6 @@
 .caixa-video video {
     min-height: 100%;
     min-width: 100%;
-    position: fixed;
-    top: 0;
     object-fit: cover;
 }
 
@@ -37,12 +36,7 @@
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
-section {
-    padding: 3rem 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
+/* Cabeçalho */
 .header {
     position: fixed;
     top: 0;
@@ -50,20 +44,14 @@ section {
     z-index: 2;
     background-color: var(--bg);
     border-bottom: var(--border);
-    width: 100vw;
+    width: 100%;
 }
 
 .header section {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    padding: 1.5rem 0;
-    position: relative;
-}
-
-.header section a img {
-    height: 6rem;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
 }
 
 .header section nav a {
@@ -73,179 +61,98 @@ section {
     transition: 0.3s linear;
 }
 
-.header section nav a:hover,
-.header section nav a:focus {
+.header section nav a:hover {
     color: var(--main-color);
-    border-bottom: 0.1rem solid var(--main-color);
-    padding-bottom: 0.5rem;
 }
 
+/* Seção principal */
 .caixa-principal {
     min-height: 100vh;
     display: flex;
-}
-.caixa-principal div {
-    max-width: 60rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
 }
 
-.caixa-principal div h3 {
-    color: #fff;
-    font-size: 6rem;
-    text-transform: uppercase;
+.caixa-principal h3 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
 }
 
-.caixa-principal div p {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: lighter;
-    padding: 1rem 0;
-    line-height: 1.8;
+.caixa-principal p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .botao-link {
+    padding: 1rem 2rem;
     background-color: var(--main-color);
-    cursor: pointer;
-    margin-top: 2rem;
-    display: inline-block;
-    font-size: 1.7rem;
     color: #fff;
-    padding: 1rem 3rem;
+    font-size: 1.6rem;
     border: none;
-    transition: 0.3s linear;
-    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.botao-link:hover,
-.botao-link:focus {
-    letter-spacing: 0.1rem;
+.botao-link:hover {
+    background-color: #c08f68;
 }
 
-.titulo {
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-}
-
-.titulo span {
-    color: var(--main-color);
-}
-
-.caixa-sobre .sobre-container {
-    display: flex;
-    align-items: center;
-    background-color: var(--black);
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.caixa-sobre .sobre-container .sobre-imagem {
-    flex: 1 1 45rem;
-}
-
-.caixa-sobre .sobre-container .sobre-imagem img {
-    width: 100%;
-}
-
-.caixa-sobre .sobre-container .sobre-texto {
-    flex: 1 1 45rem;
-    padding: 2rem;
-}
-
-.caixa-sobre .sobre-container .sobre-texto h3 {
-    font-size: 3rem;
-    color: #fff;
-}
-
-.caixa-sobre .sobre-container .sobre-texto p {
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: #fff;
-    line-height: 1.8;
-    padding: 1rem 0;
-}
-
+/* Modal */
 .modal {
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    gap: 20px;
-    z-index: 4;
     position: fixed;
     top: 50%;
-    left: -30%;
+    left: -50%;
     transform: translate(-50%, -50%);
-    transition: left 1s linear;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    transition: left 0.5s ease;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal h3 {
+    margin-bottom: 1.5rem;
+    color: #000;
 }
 
 .mascara-modal {
-    visibility: hidden;
-    z-index: 3;
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    z-index: 10;
+    transition: visibility 0.3s ease;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 1024px) {
-    .header section {
-        gap: 30px;
-    }
-    .header section nav a {
-        font-size: 1.6rem;
-    }
-    .caixa-principal div h3 {
-        font-size: 5rem;
-    }
-    .caixa-principal div p {
-        font-size: 1.8rem;
-    }
-    .botao-link {
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-    }
+/* Classes para exibir modal */
+.modal.mostrar {
+    left: 50%;
 }
 
+.mascara-modal.visivel {
+    visibility: visible;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    .header section {
-        gap: 20px;
-    }
-    .header section nav a {
-        font-size: 1.5rem;
-    }
-    .caixa-principal div h3 {
-        font-size: 4rem;
-    }
-    .caixa-principal div p {
-        font-size: 1.6rem;
-    }
-    .caixa-sobre .sobre-container {
-        flex-direction: column;
-    }
-    .modal {
-        left: 50%;
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
     :root {
-        font-size: 8px;
+        font-size: 9px;
     }
-    .header section nav a {
-        font-size: 1.2rem;
-    }
-    .caixa-principal div h3 {
+
+    .caixa-principal h3 {
         font-size: 3rem;
     }
-    .caixa-principal div p {
-        font-size: 1.4rem;
-    }
-    .botao-link {
-        font-size: 1.4rem;
-        padding: 0.8rem 2rem;
+
+    .caixa-principal p {
+        font-size: 1.5rem;
     }
 }
