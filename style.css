@@ -120,7 +120,7 @@ section {
     letter-spacing: 0.1rem;
 }
 
-.titulo  {
+.titulo {
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -166,28 +166,6 @@ section {
     padding: 1rem 0;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .header section {
-        gap: 20px;
-    }
-    .header section nav a {
-        font-size: 1.5rem;
-    }
-    .caixa-principal div h3 {
-        font-size: 4rem;
-    }
-    .caixa-principal div p {
-        font-size: 1.6rem;
-    }
-    .caixa-sobre h2 {
-        font-size: 3rem;
-    }
-    .caixa-sobre .sobre-container {
-        flex-direction: column;
-    }
-}
-
 .modal {
     display: flex;
     flex-direction: column;
@@ -208,5 +186,66 @@ section {
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99)85%);
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .header section {
+        gap: 30px;
+    }
+    .header section nav a {
+        font-size: 1.6rem;
+    }
+    .caixa-principal div h3 {
+        font-size: 5rem;
+    }
+    .caixa-principal div p {
+        font-size: 1.8rem;
+    }
+    .botao-link {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header section {
+        gap: 20px;
+    }
+    .header section nav a {
+        font-size: 1.5rem;
+    }
+    .caixa-principal div h3 {
+        font-size: 4rem;
+    }
+    .caixa-principal div p {
+        font-size: 1.6rem;
+    }
+    .caixa-sobre .sobre-container {
+        flex-direction: column;
+    }
+    .modal {
+        left: 50%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        font-size: 8px;
+    }
+    .header section nav a {
+        font-size: 1.2rem;
+    }
+    .caixa-principal div h3 {
+        font-size: 3rem;
+    }
+    .caixa-principal div p {
+        font-size: 1.4rem;
+    }
+    .botao-link {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+    }
 }
